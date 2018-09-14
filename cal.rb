@@ -19,6 +19,8 @@ def getwidth(arr)
 end
 
 def formatDay(str, month, year)
+    str.gsub!("\x5f\x08", "")
+
     if(month == Time.now.month && year == Time.now.year)
       return str.sub(/\b#{Time.now.day}\b/, "\033[7m#{Time.now.day}\033[0m")
     end
